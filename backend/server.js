@@ -45,7 +45,6 @@ app.get('/login', (req, res) => {
 
 
 app.get('/protected', keycloak.protect(), (req, res) => {
-    console.l
     const userId = req.kauth.grant.access_token.content.sub
     console.log(userId)
     res.status(200).json({
